@@ -23,8 +23,7 @@
 
 #include <cstdio>
 
-static FILE iob [ ] = { *stdin, *stdout, *stderr };
-
-extern "C" FILE* __cdecl __iob_func ( void ) {
+extern "C" FILE* __cdecl __imp___iob_func ( void ) {
+    static FILE iob [ ] = { *stdin, *stdout, *stderr };
     return iob;
 }
